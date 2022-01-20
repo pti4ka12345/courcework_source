@@ -57,11 +57,11 @@ def replace_hashtags_with_links(content):
     return " ".join(words)
 
 def search_word_in_content(user_search_word):
-    posts = get_posts()
+    posts = get_posts_with_comments_count()
     search_posts = []
     for post in posts:
         if user_search_word in (post['content']):
-            search_posts.append(post['content'])
+            search_posts.append(post)
     return search_posts
 
 

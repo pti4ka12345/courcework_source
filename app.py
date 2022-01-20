@@ -32,8 +32,7 @@ def page_search():
         posts = search_word_in_content(user_search_word)
     else:
         posts = get_posts_with_comments_count()
-    return render_template('search.html', posts=posts)
-
+    return render_template('search.html', posts=posts, count_posts=len(posts))
 
 
 

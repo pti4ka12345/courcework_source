@@ -25,10 +25,13 @@ def page_user(username):
    return render_template('user-feed.html', posts=posts, username=username)
 
 
-@app.route('/search/<search_word>')
-def page_search(search_word):
-    user_search_word = request.args.get("s")
-    posts = search_word_in_content(user_search_word)
+@app.route('/search/')
+def page_search():
+    user_search_word = request.args.get("name")
+    if user_search_word:
+        posts = search_word_in_content(user_search_word)
+    else:
+        posts = get_posts_with_comments_count()
     return render_template('search.html', posts=posts)
 
 

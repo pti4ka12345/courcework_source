@@ -58,9 +58,11 @@ def replace_hashtags_with_links(content):
 
 def search_word_in_content(user_search_word):
     posts = get_posts()
+    search_posts = []
     for post in posts:
         if user_search_word in (post['content']):
-            return post['content']
+            search_posts.append(post['content'])
+    return search_posts
 
 
 def get_username(username):
@@ -71,4 +73,4 @@ def get_username(username):
             user_posts.append(post)
     return user_posts
 
-# pprint.pprint(search_word_in_content('опять'))
+# print(search_word_in_content('кот'))

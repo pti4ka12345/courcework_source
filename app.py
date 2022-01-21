@@ -36,5 +36,5 @@ def page_search():
 
 
 
-
-app.run()
+if __name__ == "__main__"
+    app.run()
